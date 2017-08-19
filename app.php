@@ -1,6 +1,3 @@
-hello
-
-
 <?php
 function getHtml($url){
 
