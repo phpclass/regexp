@@ -1,12 +1,13 @@
 <?php
-function getHtml($url){
+//require ('get.class.php');
+require_once ('get.class.php');
+//include ('geta.class.php');
+//include_once ('get.class.php');
 
-}
+$html = getHtml('http://rp5.ua/Weather_in_Dnipro_(Dnipropetrovsk)');
 
-function getBlock($regex){
+$block = getBlock(
+    '/id\=\"forecastTable\".+?\/table/s',
 
-}
-
-function getTemperatureArray(){
-
-}
+    $html);
+print_r(getTemperatureArray($block[0]));
