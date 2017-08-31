@@ -16,7 +16,7 @@ function getBlock($regex, $subject)
 function getTemperatureArray($block)
 {
     $array = [];
-    $regex = '/(?<=t_0\"\>\<b\>\+\<span\sclass=\"otstup\"\>\<\/span>)\d.+?\/b/s';
+    $regex = '/(?<=t_0\"\>\<b\>\+\<span\sclass=\"otstup\"\>\<\/span>)\d+(?<!\/b\>)/s';
     preg_match_all($regex, $block, $array);
     return $array;
 
